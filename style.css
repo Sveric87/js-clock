@@ -1,0 +1,160 @@
+@font-face {
+  font-family: 'digital-7';
+  src: url('digital-7.ttf');
+}
+
+body{
+  color: #191516;
+  font-family: 'Open Sans', sans-serif;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd;
+}
+
+*{box-sizing: border-box;}
+
+.clockface{
+  width: 600px;
+  height: 600px;
+  border: 8px solid #191516;
+  border-radius: 300px;
+  position: relative;
+  background-color: #eee;
+  box-shadow: 0 0 5px #333, inset 0 0 5px #333; 
+}
+
+.second{
+  position: absolute;
+  width: 2px;
+  height: 280px;
+  top: 10px;
+  left: calc( 50% - 1px );
+  background-color: red;
+  
+  box-shadow: 0 0 2px #111;
+  z-index: 1;
+  transform-origin: bottom;
+  transform: rotateZ(0deg);
+}
+.minute{
+  position: absolute;
+  width: 6px;
+  height: 230px;
+  top: 60px;  
+  left: calc( 50% - 3px );
+  background-color: #333;
+  box-shadow: 0 0 4px #111;
+  z-index: 2;
+  transform-origin: bottom;
+  transform: rotateZ(0deg);
+}
+.hour{
+  position: absolute;
+  width: 12px;
+  height: 170px;
+  top: 120px;
+  left: calc( 50% - 6px );
+  background-color: #333;
+  box-shadow: 0 0 5px #111;
+  z-index: 3;
+  transform-origin: bottom;
+  transform: rotateZ(0deg);
+}
+
+.center{
+  position: absolute;
+  top: calc( 50% - 12px );
+  left: calc( 50% - 12px );
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: #333;
+  border: 2px solid orange;
+  box-shadow: 0 0 6px #333;
+  z-index: 10;
+}
+
+.digital{
+  position: absolute;
+  top: 80%;
+  left: calc( 50% - 140px);
+  width: 280px;
+  padding: 10px;
+  font-family: 'digital-7';
+  text-align: center;
+  font-size: 40px;
+  color: #eee;
+  background-color: #111;
+  box-shadow: inset 2px 2px 5px #ccc;
+}
+
+
+/* Checkbox Switch from https://www.w3schools.com/howto/howto_css_switch.asp */
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+} 
